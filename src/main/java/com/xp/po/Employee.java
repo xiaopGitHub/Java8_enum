@@ -1,5 +1,7 @@
 package com.xp.po;
 
+import java.util.Objects;
+
 /**
  * @Author xp
  * @CreateTime 2019/04/14  18:11
@@ -17,6 +19,26 @@ public class Employee {
         this.name = name;
         this.age = age;
         this.salary = salary;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Employee)) {
+            return false;
+        }
+        Employee employee = (Employee) o;
+        return Objects.equals(getId(), employee.getId()) &&
+                Objects.equals(getName(), employee.getName()) &&
+                Objects.equals(getAge(), employee.getAge()) &&
+                Objects.equals(getSalary(), employee.getSalary());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getName(), getAge(), getSalary());
     }
 
     @Override
