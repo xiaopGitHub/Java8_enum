@@ -40,14 +40,17 @@ public class AppTest06 {
 
     @Test
     public void test01() {
+        //判断是否所有员工都是VACATION
         boolean b1 = emps.stream()
                 .allMatch((e) -> e.getStatus().equals(Employee.Status.VACATION));
         System.out.println(b1);
 
+        //判断是否有员工是VACATION
         boolean b2 = emps.stream()
                 .anyMatch((e) -> e.getStatus().equals(Employee.Status.VACATION));
         System.out.println(b2);
 
+        //判断是否没有员工是VACATION
         boolean b3 = emps.stream()
                 .noneMatch((e) -> e.getStatus().equals(Employee.Status.VACATION));
         System.out.println(b3);
