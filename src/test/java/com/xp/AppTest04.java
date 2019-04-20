@@ -31,6 +31,7 @@ public class AppTest04 {
      * */
     @Test
     public void test01(){
+        //筛选
         emps.stream()
             .filter((e) -> e.getAge()>21)
             .forEach(System.out::println);
@@ -38,13 +39,15 @@ public class AppTest04 {
 
     @Test
     public void test02(){
-    emps.stream()
-        .limit(3)
-        .forEach(System.out::println);
+        //切片
+        emps.stream()
+            .limit(3)
+            .forEach(System.out::println);
     }
 
     @Test
     public void test03(){
+        //跳过
         emps.stream()
                 .filter((e) -> e.getAge()>20)
                 .skip(2)
@@ -53,9 +56,32 @@ public class AppTest04 {
 
     @Test
     public void test04(){
+        //去重
         emps.stream()
                 .filter((e) -> e.getAge()>20)
                 .distinct()
                 .forEach(System.out::println);
     }
+
+    /**
+     * 映射
+     * map -- 接收Lambda 将元素转换成其他形式或提取。接受一个函数作为参数，该函数会被应用到每一个
+     *        元素上，并将其映射成一个新的元素。
+     *
+     * flashMap -- 接受一个函数作为参数，将流中的每一个值都换成另一个流，然后把所有的流连接成一个流
+     *
+     *
+     * */
+    @Test
+    public void test05(){
+        //map映射,map返回一个流
+        emps.stream()
+                .map((e) -> e.getAge()+10)
+                .forEach(System.out::println);
+
+        emps.stream()
+                .map(Employee::getName)
+                .forEach(System.out::println);
+    }
+
 }
