@@ -9,17 +9,17 @@ import java.util.List;
 /**
  * @Author xp
  * @CreateTime 2019/04/18  22:45
- * @Function Stream操作
+ * @Function Stream中间操作，筛选和切片
  */
 public class AppTest04 {
     List<Employee> emps = Arrays.asList(
-            new Employee(101,"tom",20,10000),
-            new Employee(102,"jack",22,12000),
-            new Employee(103,"lucy",24,11000),
-            new Employee(104,"carl",21,15000),
-            new Employee(105,"jerry",21,15000),
-            new Employee(105,"jerry",21,15000),
-            new Employee(105,"jerry",21,15000)
+            new Employee(101,"tom",20,10000, Employee.Status.BUSY),
+            new Employee(102,"jack",22,12000,Employee.Status.VACATION),
+            new Employee(103,"lucy",24,11000,Employee.Status.BUSY),
+            new Employee(104,"carl",21,15000,Employee.Status.FREE),
+            new Employee(105,"jerry",21,15000,Employee.Status.FREE),
+            new Employee(105,"jerry",21,15000,Employee.Status.BUSY),
+            new Employee(105,"jerry",21,15000,Employee.Status.VACATION)
     );
     /**
      * 中间操作：

@@ -9,17 +9,17 @@ import java.util.List;
 /**
  * @Author xp
  * @CreateTime 2019/04/18  22:45
- * @Function Stream操作 -- 排序 (也属于中间操作)
+ * @Function Stream中间操作 -- 排序 (也属于中间操作)
  */
 public class AppTest05 {
     List<Employee> emps = Arrays.asList(
-            new Employee(101,"tom",20,10000),
-            new Employee(102,"jack",22,12000),
-            new Employee(103,"lucy",24,11000),
-            new Employee(104,"carl",21,15000),
-            new Employee(105,"jerry",21,15000),
-            new Employee(105,"jerry",21,15000),
-            new Employee(105,"jerry",21,15000)
+            new Employee(101,"tom",20,10000, Employee.Status.BUSY),
+            new Employee(102,"jack",22,12000,Employee.Status.VACATION),
+            new Employee(103,"lucy",24,11000,Employee.Status.BUSY),
+            new Employee(104,"carl",21,15000,Employee.Status.FREE),
+            new Employee(105,"jerry",21,15000,Employee.Status.FREE),
+            new Employee(105,"jerry",21,15000,Employee.Status.BUSY),
+            new Employee(105,"jerry",21,15000,Employee.Status.VACATION)
     );
 
     List<String> list =Arrays.asList("aa","bb","cc","dd");
@@ -53,26 +53,4 @@ public class AppTest05 {
              })
              .forEach(System.out::println);
     }
-
-    @Test
-    public void test02(){
-
-    }
-
-    @Test
-    public void test03(){
-
-    }
-
-    @Test
-    public void test04(){
-
-    }
-
-
-    @Test
-    public void test05(){
-
-    }
-
 }
