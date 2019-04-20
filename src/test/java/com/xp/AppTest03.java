@@ -20,6 +20,7 @@ import java.util.stream.Stream;
  * 1. 创建 Stream
  *
  * 2. 中间操作
+ *    筛选，切片，排序
  *
  * 3. 终止操作
  *

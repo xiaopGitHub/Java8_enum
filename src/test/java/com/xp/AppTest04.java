@@ -22,6 +22,7 @@ public class AppTest04 {
             new Employee(105,"jerry",21,15000)
     );
     /**
+     * 中间操作：
      * 筛选和切片
      * filter:接收Lambda,从流中排除某些元素
      * limit:截断流,使元素不超过指定数量
