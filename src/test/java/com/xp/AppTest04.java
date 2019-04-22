@@ -34,6 +34,7 @@ public class AppTest04 {
     public void test01(){
         //筛选
         emps.stream()
+            //获取每个元素的名称
             .filter((e) -> e.getAge()>21)
             .forEach(System.out::println);
     }
