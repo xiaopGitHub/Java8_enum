@@ -31,15 +31,15 @@ public class AppTest03 {
     @Test
     public void test01(){
 
-        //1. 通过 Collection 系列集合提供的stream() 或 parallelStream()
+        //1. 通过 Collection 系列集合提供的stream() 或 parallelStream()创建流
         List<String> list = new ArrayList<>();
         Stream<String> stream = list.stream();
 
-        //2. 通过Arrays 中的静态方法stream() 获取数组流
+        //2. 通过Arrays 中的静态方法stream() 创建数组流
         Book[] books=new Book[10];
         Stream<Book> stream1 = Arrays.stream(books);
 
-        //3. Stream类中的静态方法of()
+        //3. Stream类中的静态方法of(),创建流
         Stream<String> stream2 = Stream.of("aa", "bb", "cc");
 
         //4. 创建无限流
