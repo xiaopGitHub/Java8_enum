@@ -34,14 +34,14 @@ public class AppTest04 {
     public void test01(){
         //筛选
         emps.stream()
-            //获取每个元素的名称
+            //筛选年龄大于21岁的员工
             .filter((e) -> e.getAge()>21)
             .forEach(System.out::println);
     }
 
     @Test
     public void test02(){
-        //切片
+        //切片，获取千3条数据
         emps.stream()
             .limit(3)
             .forEach(System.out::println);
@@ -49,7 +49,7 @@ public class AppTest04 {
 
     @Test
     public void test03(){
-        //跳过
+        //跳过，跳过前2条数据，获取后面余下的数据
         emps.stream()
                 .filter((e) -> e.getAge()>20)
                 .skip(2)
@@ -58,7 +58,7 @@ public class AppTest04 {
 
     @Test
     public void test04(){
-        //去重
+        //去重，去除重复的数据
         emps.stream()
                 .filter((e) -> e.getAge()>20)
                 .distinct()
