@@ -41,7 +41,7 @@ public class AppTest04 {
 
     @Test
     public void test02(){
-        //切片，获取千3条数据
+        //切片，获取前3条数据
         emps.stream()
             .limit(3)
             .forEach(System.out::println);
